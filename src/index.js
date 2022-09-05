@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore,combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import BalanceReducer from './store/balanceReducer';
 import LoanReducer from './store/loanReducer';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
-const store = createStore(combineReducers({BalanceReducer,LoanReducer}))
+const store = createStore(combineReducers({ BalanceReducer, LoanReducer }), applyMiddleware(thunk))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <App />
-    </Provider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
