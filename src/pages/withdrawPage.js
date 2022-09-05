@@ -2,7 +2,7 @@ import React from "react";
 import {useSelector,useDispatch} from 'react-redux'
 
 function WithdrawPage(){
-    const balance = useSelector(state=>state.balance)
+    const balance = useSelector(state=>state.BalanceReducer.balance)
     const dispatch = useDispatch()
     const onWithdrawHandler = () =>{
         dispatch({
@@ -13,7 +13,7 @@ function WithdrawPage(){
     return (
     <div>
         <h1>Balance: {balance}</h1>
-        <button onClick={onWithdrawHandler}>Withdraw</button>
+        <button className="button-style" onClick={onWithdrawHandler}>Withdraw</button>
     </div>)
     
 }

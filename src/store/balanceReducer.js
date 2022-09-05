@@ -1,7 +1,7 @@
 const initialState = {
     balance: 0
 }
-function Reducer(state = initialState, action) {
+function BalanceReducer(state = initialState, action) {
     switch (action.type) {
         case "DEPOSIT":
             return { balance: state.balance + action.payload }
@@ -10,4 +10,4 @@ function Reducer(state = initialState, action) {
         default: return state
     }
 }
-export default Reducer
+export default BalanceReducer

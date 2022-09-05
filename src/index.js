@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
-import Reducer from './store/reducer';
+import { createStore,combineReducers } from 'redux';
+import BalanceReducer from './store/balanceReducer';
+import LoanReducer from './store/loanReducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(Reducer)
+const store = createStore(combineReducers({BalanceReducer,LoanReducer}))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
